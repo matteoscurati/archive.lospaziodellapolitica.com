@@ -1,0 +1,28 @@
+{
+  "name": "lsdp_archive",
+  "version": "0.0.1",
+  "scripts": {
+    "bemo": "npm run bemo:sprites && npm run bemo:webfonts",
+    "bemo:sprites": "bemo-sprites -s app/assets/images/sprites -i app/assets/images -S app/assets/stylesheets/variables/_sprites.scss",
+    "bemo:webfonts": "bemo-webfonts -s app/assets/fonts/svg -S app/assets/stylesheets/variables/_icon-glyphs.scss -f app/assets/fonts",
+    "bemo:scaffold": "bemo-scaffold -s app/assets/stylesheets"
+  },
+  "devDependencies": {
+    "async": "2.0.1",
+    "bemo-scaffold": "^1.0.1",
+    "bemo-sprites": "git+ssh://git@github.com:matteoscurati/bemo-sprites.git",
+    "colors": "1.1.2",
+    "ejs": "2.5.1",
+    "glob": "7.0.5",
+    "lwip": "0.0.9",
+    "meow": "3.7.0",
+    "node-fs-extra": "0.8.1",
+    "readline-sync": "1.4.4",
+    "simple-git": "1.45.0",
+    "spritesmith": "3.1.0",
+    "svg2ttf": "4.0.2",
+    "svgicons2svgfont": "5.0.0",
+    "tmp": "0.0.28",
+    "ttf2woff": "2.0.1"
+  }
+}

@@ -13,8 +13,8 @@ gem 'puma', '~> 3.0'
 gem "rack-timeout"
 gem 'sass-rails', '~> 5.0'
 gem 'slim-rails'
-#gem 'sprockets', '>= 3.0.0'
-#gem 'sprockets-es6'
+gem 'sprockets', '>= 3.0.0'
+gem 'sprockets-es6'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 

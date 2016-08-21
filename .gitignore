@@ -13,6 +13,7 @@
 
 # Ignore all logfiles and tempfiles.
 log/development.log
+/import/*
 /log/*
 !/log/.keep
 /tmp
@@ -22,6 +23,7 @@ log/development.log
 .idea
 /config/database.yml
 .env
+.keep
 node_modules/
 node_modules/*
 config/secrets.yml

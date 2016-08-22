@@ -1,4 +1,9 @@
 .wrap
   h1 All authors
   - @authors.each do |author|
-    p = author.name
+    p
+      = author.name
+      | , 
+      = author.articles.count
+    = link_to "link", articles_author_path(author)
+

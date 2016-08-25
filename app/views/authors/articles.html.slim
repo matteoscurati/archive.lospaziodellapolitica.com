@@ -1,4 +1,8 @@
 .wrap
   .formatted-content
     - @articles.each do |article|
-      = article.inspect
+      .space--bottom-2
+        = link_to article do
+          h1 = article.title
+        p = article.date
+        p = truncate(Sanitize.fragment(article.content), length: 500)

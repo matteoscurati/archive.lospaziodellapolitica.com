@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'puma', '~> 3.0'
 gem "rack-timeout"
+gem "sanitize"
 gem 'sass-rails', '~> 5.0'
 gem 'slim-rails'
 gem 'sprockets', '>= 3.0.0'

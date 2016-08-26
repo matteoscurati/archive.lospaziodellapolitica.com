@@ -8,5 +8,7 @@
         = link_to("/") do
           .main-nav__item.space--bottom-3 HOME
       nav.main-nav__nav
-        - 5.times do
-          .main-nav__item link menu
+        = link_to articles_path do
+          .main-nav__item Tutti gli articoli
+        = link_to authors_path do
+          .main-nav__item Tutti gli autori

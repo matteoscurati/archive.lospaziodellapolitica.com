@@ -18,3 +18,9 @@ slideout.on('open', function() {
 slideout.on('close', () => {
   $('.toggle-menu').removeClass('is-opened');
 });
+
+$(document).ready(() => {
+  if ($('html').hasClass('slideout-open')) {
+    $('html').removeClass('slideout-open');
+  }
+});

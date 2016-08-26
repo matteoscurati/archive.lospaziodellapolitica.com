@@ -1,0 +1,22 @@
+.slideout-menu
+  +position(fixed, 0 0 0 0)
+  z-index: 0
+  overflow-y: auto
+  width: 256px
+  -webkit-overflow-scrolling: touch
+  display: none
+
+.slideout-panel
+  position: relative
+  z-index: 1
+  will-change: transform
+  background-color: $white
+  height: 100%
+
+.slideout-open,
+.slideout-open body,
+.slideout-open .slideout-panel
+  overflow: hidden
+
+.slideout-open .slideout-menu
+  display: block

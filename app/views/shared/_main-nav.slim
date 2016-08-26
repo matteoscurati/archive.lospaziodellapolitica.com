@@ -1,0 +1,12 @@
+.main-nav.slideout-menu#menu
+  .wrap
+    .main-nav__inner
+      = link_to "/" do
+        .main-nav__logo
+      .main-nav__space
+      nav.main-nav__nav
+        = link_to("/") do
+          .main-nav__item.space--bottom-3 HOME
+      nav.main-nav__nav
+        - 5.times do
+          .main-nav__item link menu

@@ -1,7 +1,7 @@
 .hero
   background-repeat: no-repeat
   background-position: center center
-  background-color: $light-bg-color
+  //background-color: $light-bg-color
   background-size: cover
   position: relative
 
@@ -22,6 +22,14 @@
   margin-left: auto
   margin-right: auto
   max-width: 800px
+
+.hero__heading--lsdp
+  @extend .hero__actions
+  background: image-url("logo--big-centered.svg") no-repeat center center
+  background-size: contain
+  max-width: 400px
+  +padding(5)
+  margin: 0 auto
 
 .hero__text
   +heading-font-family

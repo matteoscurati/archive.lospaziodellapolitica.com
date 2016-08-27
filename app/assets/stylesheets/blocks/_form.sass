@@ -3,6 +3,7 @@
     +padding(2)
     +margin-bottom(2)
     border-color: $border-color
+    border: none
 
     &:last-child
       margin-bottom: 0
@@ -44,6 +45,14 @@
 
 .form__input--large
   +font-size(gamma)
+  +padding(0.5)
+  width: 100%
+
+  +at-breakpoint(lap)
+    width: 80%
+
+  +at-breakpoint(desk)
+    width: 70%
 
 .form__block
   +margin-bottom(3)
@@ -62,4 +71,3 @@
 
   .form__field__input *
     padding-left: 2.5em
-

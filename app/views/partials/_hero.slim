@@ -1,0 +1,19 @@
+.hero
+  .hero__body
+    .hero__body__inner
+      .hero__heading--lsdp
+      .hero__text
+        p lorem
+      .hero__actions
+        .wrap
+          form.form
+            fieldset
+              .form__field
+                input.form__input--large placeholder="Ciao"
+              .form__actions
+                .welcome-actions
+                  .welcome-actions__item
+                    input.button--large type="submit" value="cerca in LSDP"
+                  .welcome-actions__item
+                    = link_to @articles do
+                      .button--large mi sento moris

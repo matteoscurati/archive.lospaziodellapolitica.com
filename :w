@@ -1,0 +1,10 @@
+class Author < ApplicationRecord
+  has_many :articles
+
+  scope :created, -> {
+    .joins("articles")
+    .select("articles.*, count(author_id) as authors_count")
+    #.group("articles.id")
+    #.order("authors_count DESC")
+  }
+end

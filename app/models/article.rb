@@ -1,8 +1,8 @@
 class Article < ApplicationRecord
-  belongs_to :author
+  belongs_to :author, counter_cache: true
   validates :title, :content, :date, presence: true
 
   scope :created, -> {
-    order(id: :desc)
+    order(date: :desc)
   }
 end

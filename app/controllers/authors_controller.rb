@@ -1,10 +1,10 @@
 class AuthorsController < ApplicationController
   def index
-    @authors = Author.all
+    @authors = Author.ordered_by_articles
   end
 
   def articles
     @author = Author.find(params[:id])
-    @articles = @author.articles
+    @articles = @author.articles.created
   end
 end

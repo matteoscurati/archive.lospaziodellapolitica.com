@@ -1,0 +1,53 @@
+.articles__heading
+
+  h1
+    +heading-font-family
+    +font-size(alpha)
+    +margin-top(5)
+    +margin-bottom(2)
+
+.articles__items
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  align-items: baseline
+  align-content: space-between
+
+.articles__item
+  max-width: 140px
+  background-color: $very-light-grey
+  +padding(0.7)
+  +margin(0.5)
+  +margin-left(0)
+  cursor: pointer
+  transition: all 0.3s ease-in-out
+
+  .no-touchevents &:hover
+    opacity: .5
+
+  +at-breakpoint(desk)
+    +margin(1)
+    +margin-left(0)
+
+.articles__item__meta
+  +font-size(micro)
+  +margin-bottom(0.3)
+
+.articles__item__author
+  +font-size(milli)
+  +vertical-margin(0.3)
+  font-style: italic
+
+.articles__item__heading
+  +heading-font-family
+  text-transform: uppercase
+  color: $light-grey
+  +font-size(zeta)
+
+.articles__item__content
+  +font-size(milli)
+  +vertical-margin(0.3)
+  display: none
+
+  +at-breakpoint(lap)
+    display: block

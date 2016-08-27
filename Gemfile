@@ -5,6 +5,7 @@ ruby "2.3.1"
 gem 'rails', '~> 5.0.0'
 gem 'pg'
 
+gem 'autoprefixer-rails'
 gem 'coffee-rails', '~> 4.2'
 gem 'bcrypt', '~> 3.1.7'
 gem 'jbuilder', '~> 2.5'

@@ -1,9 +1,21 @@
 .wrap
-  h1 All authors
-  - @authors.each do |author|
-    p
-      = author.name
-      | , 
-      = author.articles.count
-    = link_to "link", articles_author_path(author)
-
+  .articles
+    .articles__body
+      .articles__inner
+        .articles__heading
+          h1 Gli autori LSDP
+        .articles__items
+          - @authors.each do |author|
+            .articles__item
+              .articles__item__body
+                .articles__item__inner
+                  .articles__item__meta
+                    - article_count = author.articles.count
+                    = article_count
+                    - if article_count == 1
+                      |  articolo
+                    - else
+                      |  articoli
+                  .articles__item__heading
+                    = link_to(articles_author_path(author)) do
+                      p = author.name

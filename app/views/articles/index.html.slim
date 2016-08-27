@@ -1,6 +1,21 @@
 .wrap
-  h1 All articles
-  p = @articles.count
-  - @articles.each do |article|
-    = link_to(article_path(article)) do
-      p = article.title
+  .articles
+    .articles__body
+      .articles__inner
+        .articles__heading
+          h1
+            = @articles.count
+            |  articoli
+        .articles__items
+          - @articles.each do |article|
+            .articles__item
+              .articles__item__body
+                  .articles__item__inner
+                    .articles__item__meta
+                      = article.date
+                    .articles__item__heading
+                      = link_to(article_path(article)) do
+                        p = article.title
+                    .articles__item__author
+                        | di 
+                        = article.author.name

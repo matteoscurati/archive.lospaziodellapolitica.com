@@ -1,8 +1,25 @@
 .wrap
-  .formatted-content
-    - @articles.each do |article|
-      .space--bottom-2
-        = link_to article do
-          h1 = article.title
-        p = article.date
-        p = truncate(Sanitize.fragment(article.content), length: 500)
+  .articles
+    .articles__body
+      .articles__inner
+        .articles__heading
+          h1
+            - article_count = @articles.count
+            = @articles.count
+            - if article_count == 1
+              |  articolo di 
+            - else
+              |  articoli di 
+            = @author.name
+        .articles__items
+          - @articles.each do |article|
+            .articles__item
+              .articles__item__body
+                .articles__item__inner
+                  .articles__item__meta
+                    = article.date
+                  .articles__item__heading
+                    = link_to article do
+                      p = article.title
+                  .articles__item__content
+                    p = truncate(Sanitize.fragment(article.content), length: 100)

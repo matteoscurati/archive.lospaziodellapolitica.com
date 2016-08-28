@@ -1,5 +1,5 @@
 class Author < ApplicationRecord
-  has_many :articles
+  has_many :articles, dependent: :destroy
 
   scope :ordered_by_articles, -> {
     select("authors.id, authors.name, count(articles.id)")

@@ -44,18 +44,22 @@
   align-content: space-between
 
 .articles__item
-  background-color: $very-light-grey
-  +padding(0.7)
+  width: 47%
   +margin-bottom(0.7)
-  cursor: pointer
-  transition: all 0.3s ease-in-out
-  width: 43%
 
   +at-breakpoint(tab)
-    width: 25%
+    width: 33%
 
   +at-breakpoint(lap)
-    width: 21%
+    width: 23%
+
+.articles__item__body
+
+.articles__item__inner
+  background-color: $very-light-grey
+  cursor: pointer
+  transition: all 0.3s ease-in-out
+  +padding(1)
 
   .no-touchevents &:hover
     background-color: rgba(237, 237, 237, 0.5)
@@ -109,3 +113,14 @@
 .articles__item__cover
   max-width: 150px
   +margin-right(0.5)
+
+.articles__item__action
+  +vertical-margin(0.5)
+  +font-size(milli)
+
+.articles__item__action--delete
+
+  &:before
+    content: "\00274C"
+    color: red
+    +margin-right(0.3)

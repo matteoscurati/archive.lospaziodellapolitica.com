@@ -11,10 +11,11 @@
             - else
               |  articoli di 
             = @author.name
-        .articles__actions
-          input.fuzzy-search.input placeholder="Cosa vuoi cercare?"
-          .articles__actions__item
-            button.button.sort.desc data-sort="date" Data
+        - if article_count > 4
+          .articles__actions
+            input.fuzzy-search.input placeholder="Cosa vuoi cercare?"
+            .articles__actions__item
+              button.button.sort.desc data-sort="date" Data
         .articles__items.list
           - @articles.each do |article|
             = link_to(article, class: "articles__item") do

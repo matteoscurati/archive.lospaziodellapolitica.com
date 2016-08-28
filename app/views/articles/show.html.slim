@@ -5,7 +5,8 @@
       .article__meta
         p
           | di 
-          = @article.author.name
+          = link_to(articles_author_path(@article.author)) do
+            = @article.author.name
         p
           | pubblicato il 
           = @article.date

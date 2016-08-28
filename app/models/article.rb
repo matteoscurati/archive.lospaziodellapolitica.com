@@ -1,5 +1,5 @@
 class Article < ApplicationRecord
-  belongs_to :author, counter_cache: true
+  belongs_to :author
   validates :title, :content, :date, presence: true
 
   scope :created, -> {

@@ -8,14 +8,14 @@
             |  articoli
         .articles__items
           - @articles.each do |article|
-            .articles__item
-              .articles__item__body
-                  .articles__item__inner
-                    .articles__item__meta
-                      = article.date
-                    .articles__item__heading
-                      = link_to(article_path(article)) do
+            = link_to(article_path(article)) do
+              .articles__item
+                .articles__item__body
+                    .articles__item__inner
+                      .articles__item__meta
+                        = article.date
+                      .articles__item__heading
                         p = article.title
-                    .articles__item__author
+                      .articles__item__author
                         | di 
                         = article.author.name

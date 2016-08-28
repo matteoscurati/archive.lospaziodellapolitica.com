@@ -1,21 +1,25 @@
 .wrap
-  .articles
+  .articles#articles
     .articles__body
       .articles__inner
         .articles__heading
           h1
             = @articles.count
             |  articoli
-        .articles__items
+        .articles__actions
+          input.fuzzy-search.input placeholder="Cosa vuoi cercare?"
+          .articles__actions__item
+            button.button.sort data-sort="name" Autore
+            button.button.sort.desc data-sort="date" Data
+        .articles__items.list
           - @articles.each do |article|
-            = link_to(article_path(article)) do
-              .articles__item
-                .articles__item__body
-                    .articles__item__inner
-                      .articles__item__meta
-                        = article.date
-                      .articles__item__heading
-                        p = article.title
-                      .articles__item__author
-                        | di 
-                        = article.author.name
+            = link_to(article_path(article), class: "articles__item") do
+              .articles__item__body
+                .articles__item__inner
+                  .articles__item__meta.date
+                    = article.date
+                  .articles__item__heading.title
+                    p = article.title
+                  .articles__item__author.name
+                    | di 
+                    = article.author.name

@@ -6,21 +6,56 @@
     +margin-top(5)
     +margin-bottom(2)
 
+.articles__actions
+  +margin-bottom(2)
+
+  input
+    @extend .input
+    @extend .form__input--large
+    +margin-bottom(1)
+    +padding(0)
+    +padding-bottom(0.5)
+    border: none
+    width: 100%
+    border-bottom: 2px solid $base-body-color
+
+.articles__actions__item
+
+  button
+    +margin-right(0.3)
+
+  button.asc
+    &:before
+      content: "\25b4"
+      +margin-right(0.3)
+
+  button.desc
+    &:before
+      content: "\25be"
+      +margin-right(0.3)
+
 .articles__items
+  width: 100%
   display: flex
   flex-direction: row
   flex-wrap: wrap
   align-items: baseline
+  justify-content: space-between
   align-content: space-between
 
 .articles__item
-  max-width: 140px
   background-color: $very-light-grey
   +padding(0.7)
-  +margin(0.5)
-  +margin-left(0)
+  +margin-bottom(0.7)
   cursor: pointer
   transition: all 0.3s ease-in-out
+  width: 43%
+
+  +at-breakpoint(tab)
+    width: 25%
+
+  +at-breakpoint(lap)
+    width: 21%
 
   .no-touchevents &:hover
     background-color: rgba(237, 237, 237, 0.5)

@@ -1,21 +1,25 @@
 .wrap
-  .articles
+  .articles#authors
     .articles__body
       .articles__inner
         .articles__heading
           h1 Gli autori LSDP
-        .articles__items
+        .articles__actions
+          input.fuzzy-search.input placeholder="Cosa vuoi cercare?"
+          .articles__actions__item
+            button.button.sort data-sort="name" Autore
+            button.button.sort.desc data-sort="count" # Articoli
+        .articles__items.list
           - @authors.each do |author|
-            = link_to(articles_author_path(author)) do
-              .articles__item
-                .articles__item__body
-                  .articles__item__inner
-                    .articles__item__meta
-                      - article_count = author.articles.count
-                      = article_count
-                      - if article_count == 1
-                        |  articolo
-                      - else
-                        |  articoli
-                    .articles__item__heading
-                      p = author.name
+            = link_to(articles_author_path(author), class: "articles__item") do
+              .articles__item__body
+                .articles__item__inner
+                  .articles__item__meta.count
+                    - article_count = author.articles.count
+                    = article_count
+                    - if article_count == 1
+                      |  articolo
+                    - else
+                      |  articoli
+                  .articles__item__heading.name
+                    p = author.name

@@ -1,5 +1,5 @@
 .wrap
-  .articles
+  .articles#articles
     .articles__body
       .articles__inner
         .articles__heading
@@ -11,15 +11,18 @@
             - else
               |  articoli di 
             = @author.name
-        .articles__items
+        .articles__actions
+          input.fuzzy-search.input placeholder="Cosa vuoi cercare?"
+          .articles__actions__item
+            button.button.sort.desc data-sort="date" Data
+        .articles__items.list
           - @articles.each do |article|
-            .articles__item
+            = link_to(article, class: "articles__item") do
               .articles__item__body
                 .articles__item__inner
-                  .articles__item__meta
+                  .articles__item__meta.date
                     = article.date
-                  .articles__item__heading
-                    = link_to article do
-                      p = article.title
+                  .articles__item__heading.title
+                    p = article.title
                   .articles__item__content
                     p = truncate(Sanitize.fragment(article.content), length: 100)

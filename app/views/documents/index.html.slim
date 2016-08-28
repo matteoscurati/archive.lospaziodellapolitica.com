@@ -6,15 +6,18 @@
           h1
             = @documents.count
             |  documenti in PDF
-        .articles__items
-          - @documents.each do |document|
-            = link_to("/documents/pdf/#{document.title}.pdf", html_options = {target: "_blank"}) do
-              .articles__item--document
-                .articles__item__body
-                  .articles__item__inner
-                    .articles__item__meta pdf
-                    .articles__document__inner
-                      .articles__item__cover
-                        = image_tag("/documents/images/#{document.title}.jpg")
-                      .articles__item__heading
-                        p = document.title
+        .formatted-content
+          table
+            thead
+              tr
+                th Copertina
+                th File
+            tbody
+              - @documents.each do |doc|
+                tr
+                  td.is-img data-title="Copertina"
+                    = link_to("/documents/pdf/#{doc.title}.pdf", html_options = { target: "_blank" }) do
+                      = image_tag("/documents/images/#{doc.title}.jpg")
+                  td data-title="File"
+                    = link_to("/documents/pdf/#{doc.title}.pdf", html_options = { target: "_blank" }) do
+                      = doc.title

@@ -7,6 +7,23 @@
     text-align: left
     +padding(1)
 
+    &.is-img
+      text-align: center
+
+      img
+        transition: all 0.5s ease-in-out
+        width: 100%
+
+        +at-breakpoint(tab)
+          width: 200px
+
+        &:hover
+          opacity: 0.5
+
+  td
+    a
+      +heading-font-family
+
   th
     +heading-font-family
     font-variant: small-caps
@@ -14,9 +31,9 @@
     border-bottom: 1px solid $border-color
 
   tr:nth-child(2n)
-    background-color: $light-bg-color
+    background-color: $very-light-grey
 
-+at-breakpoint(lte-lap)
++at-breakpoint(lte-tab)
   .table
     display: block
     border-bottom-width: 0

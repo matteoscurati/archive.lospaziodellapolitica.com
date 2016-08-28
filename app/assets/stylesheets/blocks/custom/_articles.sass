@@ -23,11 +23,27 @@
   transition: all 0.3s ease-in-out
 
   .no-touchevents &:hover
-    opacity: .5
+    background-color: rgba(237, 237, 237, 0.5)
+
+    .articles__item__heading
+      color: $blue
+
+    .articles__item__cover
+      img
+        opacity: 0.8
+
+.articles__items
+
+  a
+    text-decoration: none
 
   +at-breakpoint(desk)
     +margin(1)
     +margin-left(0)
+
+.articles__item--document
+  @extend .articles__item
+  max-width: 450px
 
 .articles__item__meta
   +font-size(micro)
@@ -41,7 +57,7 @@
 .articles__item__heading
   +heading-font-family
   text-transform: uppercase
-  color: $light-grey
+  color: $grey
   +font-size(zeta)
 
 .articles__item__content
@@ -51,3 +67,10 @@
 
   +at-breakpoint(lap)
     display: block
+
+.articles__document__inner
+  display: flex
+
+.articles__item__cover
+  max-width: 150px
+  +margin-right(0.5)

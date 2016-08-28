@@ -1,3 +1,20 @@
 .wrap
   .articles
-    h1 tutti i documenti
+    .articles__body
+      .articles__inner
+        .articles__heading
+          h1
+            = @documents.count
+            |  documenti in PDF
+        .articles__items
+          - @documents.each do |document|
+            = link_to("/documents/pdf/#{document.title}.pdf", html_options = {target: "_blank"}) do
+              .articles__item--document
+                .articles__item__body
+                  .articles__item__inner
+                    .articles__item__meta pdf
+                    .articles__document__inner
+                      .articles__item__cover
+                        = image_tag("/documents/images/#{document.title}.jpg")
+                      .articles__item__heading
+                        p = document.title

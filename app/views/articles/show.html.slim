@@ -1,8 +1,14 @@
 .wrap
-  .formatted-content
-    h1 = @article.title
-    h2 = @article.id
-    p = @article.author.name
-    p = @article.date
-    p = @article.content.html_safe
-  = link_to 'Back', articles_path
+  .article
+    .formatted-content
+      h1 = @article.title
+      .article__meta
+        p
+          | di 
+          = @article.author.name
+        p
+          | pubblicato il 
+          = @article.date
+      p = @article.content.html_safe
+  .space--both-5
+    = link_to 'Torna a tutti gli articoli', articles_path

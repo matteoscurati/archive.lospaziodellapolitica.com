@@ -15,6 +15,7 @@ gem 'puma', '~> 3.0'
 gem "rack-timeout"
 gem "sanitize"
 gem 'sass-rails', '~> 5.0'
+gem 'searchkick'
 gem 'simple_form'
 gem 'slim-rails'
 gem 'sprockets', '>= 3.0.0'

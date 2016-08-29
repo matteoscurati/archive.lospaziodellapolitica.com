@@ -15,5 +15,16 @@
                   .welcome-actions__item
                     input.button--large type="submit" value="cerca in LSDP"
                   .welcome-actions__item
-                    = link_to @articles do
+                    = link_to @articles_sample do
                       .button--large mi sento moris
+.space--top-5
+  = form_for search_path, method: :get do |f|
+    = f.label "Search for"
+    = text_field_tag :q, params[:q]
+    = submit_tag "Go", name: nil
+
+  p.space--both-5 = @articles.count
+
+  - @articles.each do |article|
+    = link_to article_path(article) do
+      p = article.title

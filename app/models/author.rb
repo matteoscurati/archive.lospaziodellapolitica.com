@@ -1,4 +1,6 @@
 class Author < ApplicationRecord
+  searchkick
+
   has_many :articles, dependent: :destroy
 
   scope :ordered_by_articles, -> {

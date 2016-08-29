@@ -25,4 +25,4 @@
                     p = author.name
               - if user_signed_in?
                 .articles__item__action
-                  p = link_to 'Elimina', author_path(author), method: :delete, data: { confirm: 'Sei sicuro? Ricorda: se elimini un autore elimini anche tutti i suoi articoli!' }, class: "articles__item__action--delete"
+                  p = link_to 'Elimina', author_path(author), method: :delete, data: { confirm: 'Sei sicuro? Ricorda: se elimini un autore elimini anche tutti i suoi articoli!', "turbolinks-eval": false, turbolinks: false }, class: "articles__item__action--delete"

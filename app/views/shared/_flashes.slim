@@ -1,0 +1,4 @@
+- flash.each do |key, value|
+  - Array(value).each do |v|
+    .div data-alert=true role=key class=(key == 'notice' ? 'flash--notice' : 'flash--alert') id="flash"
+      = v

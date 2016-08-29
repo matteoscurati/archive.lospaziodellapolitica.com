@@ -1,0 +1,27 @@
+.hero
+  .hero__body
+    .hero__body__inner
+      .hero__heading
+        h1
+          | Ehi!
+      .hero__text
+        p
+          | Solo gli editor hanno riceuvto le credenziali.
+          br
+          | Se ti servono, chiedile a loro :)
+.devise
+  .devise__body
+    .devise__inner
+      = simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form--narrow" }) do |f|
+        = f.error_notification
+        = f.full_error :confirmation_token
+        fieldset
+          = f.input :email, required: false, autofocus: true, wrapper_html: { class: "form__field" }, error: 'Username is mandatory, please specify one'
+          .form__field
+            = f.input :password, required: false
+          .form__field
+            = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
+          .form-actions
+            = f.button :submit, "Login", class: "button--large"
+
+        = render "devise/shared/links"

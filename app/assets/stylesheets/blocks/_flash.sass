@@ -1,13 +1,18 @@
 .flash
-  text-align: center
-  border: 1px solid $border-color
-  +heading-font-family
+  +position(fixed, null null 1rem 1rem)
+  z-index: 100
+  background-color: $base-body-color
+  color: white
   +padding(1)
+  font-size: 0.85rem
+  text-transform: uppercase
+
+  +at-breakpoint(eq-palm)
+    width: 30%
 
 .flash--notice
   @extend .flash
-  border-color: $notice-color
-  color: $notice-color
+  border-left: 10px solid $notice-color
 
   &:before
     @extend .icon--check:before
@@ -15,8 +20,7 @@
 
 .flash--alert
   @extend .flash
-  border-color: $alert-color
-  color: $alert-color
+  border-left: 10px solid $alert-color
 
   &:before
     @extend .icon--cross:before

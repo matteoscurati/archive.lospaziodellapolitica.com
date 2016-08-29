@@ -5,12 +5,11 @@ html
     meta name="robots" content="noindex"
     meta name="robots" content="nofollow"
     = csrf_meta_tags
-
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-
   body
     = render "shared/main-nav"
     main.slideout-panel#panel
+      = render "shared/flashes"
       = render "shared/toggle-menu"
       = yield
     = render "shared/back-top"

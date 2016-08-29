@@ -29,4 +29,4 @@
                     p = truncate(Sanitize.fragment(article.content), length: 100)
               - if user_signed_in?
                 .articles__item__action
-                  p = link_to 'Elimina', article_path(article), method: :delete, data: { confirm: 'Sei davvero sicuro? Ricorda, chi dimentica è compice' }, class: "articles__item__action--delete"
+                  p = link_to 'Elimina', article_path(article), method: :delete, data: { confirm: 'Sei davvero sicuro? Ricorda, chi dimentica è compice', "turbolinks-eval": false, turbolinks: false }, class: "articles__item__action--delete"

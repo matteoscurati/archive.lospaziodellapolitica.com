@@ -14,3 +14,8 @@
           .main-nav__item Tutti gli autori
         = link_to documents_path do
           .main-nav__item Tutti i documenti
+      nav.main-nav__nav.space--top-3
+        - if user_signed_in?
+          = link_to "LOGOUT", destroy_user_session_path, method: :delete, class: "main-nav__item"
+        - else
+          = link_to "LOGIN", new_user_session_path, class: "main-nav__item"

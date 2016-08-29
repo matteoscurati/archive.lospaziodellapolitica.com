@@ -21,8 +21,15 @@
           opacity: 0.5
 
   td
-    a
+    .table__title
       +heading-font-family
+
+    .articles__item__actions
+      +margin-top(1)
+      +font-size(milli)
+
+      a
+        text-decoration: none
 
   th
     +heading-font-family

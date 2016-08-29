@@ -15,15 +15,14 @@
           - @articles.each do |article|
             .articles__item
               = link_to(article_path(article), class: "articles__item__body") do
-                .articles__item__body
-                  .articles__item__inner
-                    .articles__item__meta.date
-                      = article.date
-                    .articles__item__heading.title
-                      p = article.title
-                    .articles__item__author.name
-                      | di 
-                      = article.author.name
-              .articles__item__action
-                p = link_to 'Elimina', article_path(article), method: :delete, data: { confirm: 'Sei davvero sicuro?' } , class: "articles__item__action--delete"
-                p = link_to 'Modifica', edit_article_path(article), class: "articles__item__action--edit"
+                .articles__item__inner
+                  .articles__item__meta.date
+                    = article.date
+                  .articles__item__heading.title
+                    p = article.title
+                  .articles__item__author.name
+                    | di 
+                    = article.author.name
+              - if user_signed_in?
+                .articles__item__action
+                  p = link_to 'Elimina', article_path(article), method: :delete, data: { confirm: 'Sei davvero sicuro? Ricorda, chi dimentica è complice' }, class: "articles__item__action--delete"

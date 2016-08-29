@@ -20,4 +20,7 @@
                       = image_tag("/documents/images/#{doc.title}.jpg")
                   td data-title="File"
                     = link_to("/documents/pdf/#{doc.title}.pdf", html_options = { target: "_blank" }) do
-                      = doc.title
+                      p.table__title = doc.title
+                    - if user_signed_in?
+                      .articles__item__actions
+                        p = link_to 'Elimina', document_path(doc), method: :delete, data: { confirm: 'Sei davvero sicuro? Ricorda, chi dimentica è complice' }, class: "articles__item__action--delete"

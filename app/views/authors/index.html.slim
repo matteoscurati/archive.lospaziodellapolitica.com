@@ -11,8 +11,8 @@
             button.button.sort.desc data-sort="count" # Articoli
         .articles__items.list
           - @authors.each do |author|
-            = link_to(articles_author_path(author), class: "articles__item") do
-              .articles__item__body
+            .articles__item
+              = link_to(articles_author_path(author), class: "articles__item__body") do
                 .articles__item__inner
                   .articles__item__meta.count
                     - article_count = author.articles.count
@@ -23,3 +23,6 @@
                       |  articoli
                   .articles__item__heading.name
                     p = author.name
+              - if user_signed_in?
+                .articles__item__action
+                  p = link_to 'Elimina', author_path(author), method: :delete, data: { confirm: 'Sei sicuro? Ricorda: se elimini un autore elimini anche tutti i suoi articoli!' }, class: "articles__item__action--delete"

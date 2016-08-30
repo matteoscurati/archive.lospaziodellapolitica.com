@@ -6,25 +6,17 @@
         p Chi dimentica è complice.
       .hero__actions
         .wrap
-          form.form
+          = form_for search_path, method: :get, html: { class: "form" } do |f|
             fieldset
               .form__field
-                input.form__input--large placeholder="Ciao"
+                = text_field_tag :q, params[:q], placeholder: "Cerca articoli e autori...", class: "form__input--large"
               .form__actions
                 .welcome-actions
                   .welcome-actions__item
-                    input.button--large type="submit" value="cerca in LSDP"
+                    = submit_tag "cerca il LSDP", name: nil, class: "button--large"
                   .welcome-actions__item
                     = link_to @articles_sample do
                       .button--large mi sento moris
-.space--top-5
-  = form_for search_path, method: :get do |f|
-    = f.label "Search for"
-    = text_field_tag :q, params[:q]
-    = submit_tag "Go", name: nil
 
-  p.space--both-5 = @articles.count
-
-  - @articles.each do |article, details|
-    = link_to article_path(article) do
-      p = article.title
+- if @articles.count > 0
+  = render "partials/search"

@@ -1,0 +1,28 @@
+.search
+  width: 100%
+  max-width: 800px
+  margin-left: auto
+  margin-right: auto
+
+  +at-breakpoint(lap)
+    width: 80%
+
+  +at-breakpoint(desk)
+    width: 70%
+
+.search__heading
+  +heading-font-family
+  +font-size(milli)
+  text-transform: uppercase
+  +margin-bottom(3)
+
+.search__item
+  +margin-bottom(2.5)
+  +font-size(small-print)
+
+.search__item__title
+  text-transform: uppercase
+
+.search__item__meta
+  +font-size(milli)
+  font-style: italic

@@ -1,0 +1,21 @@
+.wrap
+  .search
+    .search__body
+      .search__body__inner
+        .search__heading
+          = @articles.count
+          - if @articles.count > 1
+            |  articoli
+          - else
+            |  articolo
+        .search__items
+          - @articles.each do |article, details|
+            .search__item
+              .search__item__title
+                = link_to article_path(article) do
+                  h2 = article.title
+              .search__item__meta
+                | di 
+                = article.author.name
+              .search__item__meta
+                = article.date

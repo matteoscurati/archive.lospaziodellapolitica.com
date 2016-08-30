@@ -9,8 +9,10 @@ class Article < ApplicationRecord
   }
 
   def search_data
-    attributes.merge(
-      author_name: author(&:name)
-    )
+    attrs = attributes.dup
+    relational = {
+      author_name: author.name
+    }
+    attrs.merge! relational
   end
 end

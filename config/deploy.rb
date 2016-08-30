@@ -4,7 +4,7 @@ lock '3.6.1'
 server 'archive.lospaziodellapolitica.com', port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:matteoscurati/archive.lospaziodellapolitica.com.git'
-set :application,     'archive.lospaziodellapolitica'
+set :application,     'archive.lospaziodellapolitica.com'
 set :user,            'matteos'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
@@ -27,7 +27,7 @@ set :puma_conf,       -> { "#{release_path}/config/puma.rb" }
 set :puma_pid,        -> { "#{shared_path}/tmp/pids/puma.pid" }
 set :puma_access_log, -> { "#{release_path}/log/puma.error.log" }
 set :puma_error_log,  -> { "#{release_path}/log/puma.access.log" }
-set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa.pub) }
+set :ssh_options,     { auth_methods:  ['publickey'], forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa.pub) }
 set :puma_preload_app, true
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true  # Change to false when not using ActiveRecord

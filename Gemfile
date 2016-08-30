@@ -11,6 +11,7 @@ gem 'devise'
 gem 'bcrypt', '~> 3.1.7'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
+gem 'nokogiri'
 gem 'puma', '~> 3.0'
 gem "rack-timeout"
 gem "sanitize"

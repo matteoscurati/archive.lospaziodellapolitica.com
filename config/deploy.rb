@@ -4,7 +4,7 @@ lock '3.6.1'
 server 'archive.lospaziodellapolitica.com', port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:matteoscurati/archive.lospaziodellapolitica.com.git'
-set :application,     'archive.lospaziodellapolitica.com'
+set :application,     'archive.lospaziodellapolitica'
 set :user,            'matteos'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0

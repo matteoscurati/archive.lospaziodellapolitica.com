@@ -1,5 +1,5 @@
 class Article < ApplicationRecord
-  searchkick
+  searchkick language: "italian"
 
   belongs_to :author
   validates :title, :content, :date, presence: true
@@ -10,7 +10,7 @@ class Article < ApplicationRecord
 
   def search_data
     attributes.merge(
-      author_name: author.name
+      author_name: author(&:name)
     )
   end
 end

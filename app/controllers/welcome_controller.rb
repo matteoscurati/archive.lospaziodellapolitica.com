@@ -7,7 +7,9 @@ class WelcomeController < ApplicationController
     else
       @articles = Article.search(
         params[:q],
-        fields: ["title^10", "content", "author_name^100"]
+        fields: ["title^10", "content", "author_name^12", "date"],
+        misspellings: {below: 5},
+        operator: "or"
       )
     end
   end

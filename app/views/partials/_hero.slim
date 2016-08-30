@@ -25,6 +25,6 @@
 
   p.space--both-5 = @articles.count
 
-  - @articles.each do |article|
+  - @articles.each do |article, details|
     = link_to article_path(article) do
       p = article.title

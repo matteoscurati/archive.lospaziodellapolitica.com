@@ -5,8 +5,10 @@ $(window).scroll(function() {
     $('#back-top').fadeOut(200);
   }
 });
-$('#back-top').click( () => {
-  $('body,html').animate({
-    scrollTop : 0
-  }, 500);
+$(document).ready(() => {
+  $('body, html').click( () => {
+    $('#top').animate({
+      scrollTop : 0
+    }, 500);
+  });
 });

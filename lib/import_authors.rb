@@ -13,5 +13,9 @@ module ImportAuthors
       })
       Rails.logger.info "Created: #{auth_id} - #{auth_name}"
     end
+    Author.create({
+      id: "58",
+      name: "Alessandro Aresu e Moris Gasparri"
+    })
   end
 end

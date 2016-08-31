@@ -42,6 +42,24 @@ module ImportArticles
     articles.delete_if { |article| article[:author_id].empty? }
     Rails.logger.info "Articles with a valid author_id: #{articles.count}"
 
+    articles.each do |art|
+      if art[:author_id] == "8"
+        art[:author_id] = "1379"
+      end
+    end
+
+    articles.each do |art|
+      if art[:author_id] == "123"
+        art[:author_id] = "20"
+      end
+    end
+
+    articles.each do |art|
+      if art[:author_id] == "129"
+        art[:author_id] = "20"
+      end
+    end
+
     articles.each do |article|
       Article.create({
         id: article[:id],

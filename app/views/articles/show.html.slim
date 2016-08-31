@@ -2,6 +2,9 @@
   .article
     .formatted-content
       h1 = @article.title
+      - if user_signed_in?
+        .articles__item__action
+          p = link_to 'Elimina', article_path(@article), method: :delete, data: { confirm: 'Sei davvero sicuro? Ricorda, chi dimentica è complice', "turbolinks-eval": false, turbolinks: false }, class: "articles__item__action--delete"
       .article__meta
         p
           | di 

@@ -45,7 +45,6 @@ set :linked_files, %w{
   config/secrets.yml
 }
 set :linked_dirs,  %w{
-  bin
   log
   public/system
   tmp/pids

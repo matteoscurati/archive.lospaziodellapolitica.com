@@ -34,6 +34,7 @@ end
 group :development do
   gem "awesome_print"
   gem 'capistrano',         require: false
+  gem 'capistrano-rails-console'
   gem 'capistrano-rbenv',   require: false
   gem 'capistrano-rails',   require: false
   gem 'capistrano-bundler', require: false

@@ -6,8 +6,8 @@ $(window).scroll(function() {
   }
 });
 $(document).ready(() => {
-  $('body, html').click( () => {
-    $('#top').animate({
+  $('#back-top').click( () => {
+    $('body, html').animate({
       scrollTop : 0
     }, 500);
   });
